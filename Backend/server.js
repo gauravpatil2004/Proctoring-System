@@ -5,6 +5,8 @@ const authRoutes = require("./routes/auth");
 const cors = require("cors");
 const examRoutes = require("./routes/exam");
 const questionRoutes = require("./routes/questions");
+const answerRoutes = require("./routes/answer");
+const resultRoutes = require("./routes/result");
 
 
 
@@ -13,6 +15,8 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/exams", examRoutes);
 app.use("/api/questions", questionRoutes);
+app.use("/api/answers", answerRoutes);
+app.use("/api/results", resultRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB Connected"))
